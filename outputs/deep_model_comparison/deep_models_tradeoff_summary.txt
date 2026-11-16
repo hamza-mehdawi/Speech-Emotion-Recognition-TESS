@@ -1,0 +1,20 @@
+Deep Model Research Comparison Summary
+======================================
+
+Scenario Recommendations:
+1. Resource-constrained / edge deployment: CNN Low Gaussian Noise (latency=29.893 ms/sample, size=12.359 MB, accuracy=100.00%).
+2. Maximum accuracy regardless of cost: CNN (accuracy=100.00%, macro F1=100.00%).
+3. Best overall value: VIT (overall value score=0.9494, accuracy=96.90%).
+
+Diminishing Returns:
+Moving from the smallest model by parameter count (VIT) to the highest-accuracy model (CNN) changes accuracy by 3.10%. This requires 1,034,464 additional parameters, 11.745 additional MB of saved model size, 0.149 additional final-training minutes, -1.876 additional ms/sample latency.
+
+Pareto-Optimal Candidates:
+CNN, CNN Low Gaussian Noise, VIT
+
+Notes:
+- Final-training minutes measure the selected model training stage, not full notebook runtime.
+- Whole-pipeline runtime is available only after rerunning each model notebook with the new timer cells.
+- Accuracy per dollar is NaN when CLOUD_GPU_COST_PER_HOUR is 0.0.
+- Accuracy per FLOP is NaN when FLOPs are not provided.
+- The comparison uses measured CSV outputs from the model notebooks.
